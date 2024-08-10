@@ -4,7 +4,6 @@
 <script src="../js/chat.js"></script>
 
 
-
 <!DOCTYPE html>
 <html>
 <head>
