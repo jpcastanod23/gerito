@@ -1,0 +1,96 @@
+.chat div{
+    width: 100%;
+}
+
+.bot-assistant-page{
+    margin: 10%;
+    overflow-y: hidden;
+}
+.chat{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 25%;
+}
+
+.chat-header{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    background-color: #2d5ce4;
+    border-radius: 30px 30px 0 0;
+    padding: 30px;
+}
+
+.header-introduction{
+    font-size: 25px;
+    background-color: #2a80eb;
+    padding: 20px;
+}
+
+.full-chat{
+    background-color: #D0E2EA;
+    padding-top: 3%;
+    font-size: 20px;
+}
+
+.bot-text{
+    display: flex;
+    justify-items: center;
+    justify-content: end;
+    .text{
+        width: 60%;
+        background-color: darkgray;
+        padding: 15px;
+        border-radius: 30px;
+        margin: 20px;
+    }
+}
+
+.input-text{
+    width: 100%;
+    text-align: end;
+    padding: 20px;
+    border-radius: 0 0 30px 30px;
+}
+
+.user-text{
+    display: flex;
+    justify-items: center;
+    justify-content: start;
+    .text{
+        width: 60%;
+        padding: 15px;
+        border-radius: 30px;
+        margin: 20px;
+    }
+}
+
+.speakers-container{
+    display: flex;
+    justify-content: space-evenly;
+    .speakers-button {
+        width: 20%;
+        height: 30px;
+        margin-bottom: 30px;
+        cursor: pointer;
+    }
+}
+
+.bot-text {
+    overflow: hidden;
+    animation: animate 2s linear forwards;
+}
+@keyframes animate {
+    0% {
+        width: 20%;
+    }
+    100% {
+        width: 100%;
+    }
+}
