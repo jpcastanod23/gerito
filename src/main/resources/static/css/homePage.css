@@ -1,0 +1,59 @@
+.home-page{
+    background-size: 100vw 100vh;
+    background-image: url("../images/styles/home.webp");
+    overflow-y: hidden;
+}
+
+.section-enter{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-enter {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.button-enter:after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.button-enter span {
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button-enter span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button-enter:hover span {
+    padding-right: 25px;
+}
+
+.button-enter:hover span:after {
+    opacity: 1;
+    right: 0;
+}
