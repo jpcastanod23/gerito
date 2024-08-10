@@ -1,4 +1,4 @@
-document.addEventListener('keyup', function(event) {
+document.addEventListener('keyup', function (event) {
     const nameInput = document.getElementById('name');
     const userDiv = document.getElementById('textUser');
     const fullChat = document.getElementById('full-chat');
@@ -6,8 +6,10 @@ document.addEventListener('keyup', function(event) {
         let name = nameInput.value;
         userDiv.textContent = name;
         userDiv.style.backgroundColor = "#A3AE4A";
-        createBotText(fullChat);
+        createBotText(fullChat, name);
         createSpeakerButtons(fullChat, name);
+        nameInput.disabled = true;
+        nameInput.value = "";
     }
 });
 
@@ -19,12 +21,15 @@ function createSpeakerButtons(fullChat) {
         let button = document.createElement('button');
         button.className = 'speakers-button';
         button.textContent = step.toString();
+        button.onclick = function () {
+            location.href = "/chooseTemplate?speakers=" + step;
+        };
         container.append(button);
     }
     fullChat.append(container);
 }
 
-function createBotText(fullChat, name){
+function createBotText(fullChat, name) {
     let botText = document.createElement('div');
     botText.className = 'bot-text';
     let text = document.createElement('div');

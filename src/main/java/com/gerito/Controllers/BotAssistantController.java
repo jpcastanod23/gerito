@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class BotAssistantController {
     @GetMapping("/botAssistant")
-    public String botAssistant(@RequestParam(value = "name", defaultValue = "World", required = true) String name, Model model) {
-        model.addAttribute("name", name);
+    public String botAssistant() {
         return "botAssistant";
     }
 }

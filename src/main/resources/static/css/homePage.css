@@ -1,10 +1,10 @@
-.home-page{
+.home-page {
     background-size: 100vw 100vh;
     background-image: url("../images/styles/home.webp");
     overflow-y: hidden;
 }
 
-.section-enter{
+.section-enter {
     height: 100%;
     display: flex;
     justify-content: center;
