@@ -32,16 +32,16 @@
                 <form:input path="time"/><br/>
                 --%>
 
-                <c:forEach items="${template.speakers}" var="speaker" varStatus="counter">
-                    <h2>${counter.index + 1}° Speaker's info</h2>
-                    <form:label path="speakers[${counter.index}].name">Name:</form:label>
-                    <form:input path="speakers[${counter.index}].name"/><br/>
-                    <form:label path="speakers[${counter.index}].role">Role:</form:label>
-                    <form:input path="speakers[${counter.index}].role"/><br/>
+        <c:forEach items="${template.speakers}" var="speaker" varStatus="counter">
+            <h2>${counter.index + 1}° Speaker's info</h2>
+            <form:label path="speakers[${counter.index}].name">Name:</form:label>
+            <form:input path="speakers[${counter.index}].name"/><br/>
+            <form:label path="speakers[${counter.index}].role">Role:</form:label>
+            <form:input path="speakers[${counter.index}].role"/><br/>
 
-                </c:forEach>
+        </c:forEach>
 
-                <form:button>Create template</form:button>
-            </form:form>
-        </div>
-        </body>
+        <form:button>Create template</form:button>
+    </form:form>
+</div>
+</body>
