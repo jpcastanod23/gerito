@@ -1,0 +1,36 @@
+h2{
+    text-align: center;
+    width: 100%;
+}
+
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.form-template{
+    background-color: #FFFFFF;
+    padding: 50px;
+    border-radius: 30px;
+}
+
+label{
+    display: block;
+    width: 100px;
+    color: #3485FE;
+}
+
+.fill-page{
+    height: 100%;
+    overflow-y: hidden;
+    background-image: url("../images/styles/form.png");
+}
+
+button{
+    margin: 10px 50px;
+    cursor: pointer;
+    border-radius: 5px;
+    border-color: #3485FE;
+    height: 30px;
+}

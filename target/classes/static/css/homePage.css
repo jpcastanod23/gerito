@@ -1,20 +1,29 @@
 .home-page {
     background-size: 100vw 100vh;
-    background-image: url("../images/styles/home.webp");
+    background-image: url("../images/styles/home.png");
     overflow-y: hidden;
+    font-family: "Roboto Light";
+}
+
+h1{
+    color: #FFFFFF;
+    width: 100%;
+    text-align: center;
+    margin-top: 200px;
 }
 
 .section-enter {
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .button-enter {
     display: inline-block;
     border-radius: 4px;
-    background-color: #f4511e;
+    background-color: #0153CC;
     border: none;
     color: #FFFFFF;
     text-align: center;
@@ -23,6 +32,7 @@
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
+    margin-top: -200px;
 }
 
 .button-enter:after {
