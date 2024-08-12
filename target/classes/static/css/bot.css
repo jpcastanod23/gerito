@@ -110,8 +110,8 @@
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .modal-content {
@@ -133,23 +133,41 @@
 }
 
 @-webkit-keyframes zoom {
-    from {-webkit-transform:scale(1)}
-    to {-webkit-transform:scale(2)}
+    from {
+        -webkit-transform: scale(1)
+    }
+    to {
+        -webkit-transform: scale(2)
+    }
 }
 
 @keyframes zoom {
-    from {transform:scale(0.4)}
-    to {transform:scale(1)}
+    from {
+        transform: scale(0.4)
+    }
+    to {
+        transform: scale(1)
+    }
 }
 
 @-webkit-keyframes zoom-out {
-    from {transform:scale(1)}
-    to {transform:scale(0)}
+    from {
+        transform: scale(1)
+    }
+    to {
+        transform: scale(0)
+    }
 }
+
 @keyframes zoom-out {
-    from {transform:scale(1)}
-    to {transform:scale(0)}
+    from {
+        transform: scale(1)
+    }
+    to {
+        transform: scale(0)
+    }
 }
+
 .modal-content, #caption {
     -webkit-animation-name: zoom;
     -webkit-animation-duration: 0.6s;
@@ -161,19 +179,21 @@
     animation-name: zoom-out;
     animation-duration: 0.6s;
 }
-@media only screen and (max-width: 700px){
+
+@media only screen and (max-width: 700px) {
     .modal-content {
         width: 100%;
     }
 }
 
-.img-container{
+.img-container {
     margin-top: 30px;
 }
 
 
-
-.img-template:hover {opacity: 0.7;}
+.img-template:hover {
+    opacity: 0.7;
+}
 
 
 .bot-text {
@@ -195,8 +215,8 @@
 }
 
 .speakers-button {
-        overflow: hidden;
-        animation: animate 7s;
+    overflow: hidden;
+    animation: animate 7s;
 }
 
 @keyframes animate {
@@ -209,5 +229,28 @@
         background-color: #E6F0FF;
         color: black;
         border-color: #3485FE
+    }
+}
+
+.confirmation {
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+    animation: animation 7s;
+    background-color: #012965;
+    color: #012965;
+    width: 70%;
+    margin-left: 600px;
+    margin-top: 200px;
+}
+
+@keyframes animation {
+    0% {
+        background-color: lightgreen;
+        color: black;
+    }
+    100% {
+        background-color: #012965;
+        color: #012965;
     }
 }

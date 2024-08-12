@@ -66,6 +66,11 @@
         </div>
     </div>
 </div>
+<c:choose>
+    <c:when test="${success}">
+        <div class = "confirmation"> Your template was successfully created and downloaded in your system</div>
+    </c:when>
+</c:choose>
 </body>
 </html>
 

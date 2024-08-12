@@ -1,6 +1,8 @@
 package com.gerito.Controllers;
 
+import com.gerito.Models.TemplateInformationModel;
 import com.gerito.Models.TemplateModel;
+import com.gerito.Services.ImageService;
 import com.gerito.Services.TemplateService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,11 +13,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.io.IOException;
 
 @Controller
 public class FillTemplateController {
     @Autowired
     TemplateService templateService;
+    @Autowired
+    ImageService imageService;
 
     @GetMapping("/fillTemplate")
     public String selectTemplate(@RequestParam(value = "img") int img, @RequestParam(value = "speakers") int speakers,
@@ -31,9 +36,11 @@ public class FillTemplateController {
     }
 
     @PostMapping("/createTemplate")
-    public String submitForm(@ModelAttribute("template") TemplateModel template) {
+    public String submitForm(@RequestParam(value = "img") int img, @RequestParam(value = "spkrs") int spkrs
+                             ,@ModelAttribute("template") TemplateModel template) throws IOException {
 
-        System.out.println(template);
+        TemplateInformationModel templateInformationModel = templateService.getTemplateInformationModel(spkrs, img);
+        imageService.writeText(spkrs, img, templateInformationModel, template);
 
         return "register_success";
     }
