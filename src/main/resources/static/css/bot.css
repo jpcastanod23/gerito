@@ -4,7 +4,8 @@
 
 .bot-assistant-page {
     margin: 10%;
-    overflow-y: hidden;
+    font-family: system-ui;
+    background-color: #012965;
 }
 
 .chat {
@@ -23,19 +24,20 @@
     justify-content: center;
     align-items: center;
     font-size: 30px;
-    background-color: #2d5ce4;
+    color: #012965;
+    background-color: #9AC2FE;
     border-radius: 30px 30px 0 0;
     padding: 30px;
 }
 
 .header-introduction {
-    font-size: 25px;
-    background-color: #2a80eb;
+    font-size: 20px;
+    background-color: #3485FE;
     padding: 20px;
 }
 
 .full-chat {
-    background-color: #D0E2EA;
+    background-color: #FFFFFF;
     padding-top: 3%;
     font-size: 20px;
 }
@@ -43,11 +45,11 @@
 .bot-text {
     display: flex;
     justify-items: center;
-    justify-content: end;
+    justify-content: start;
 
     .text {
         width: 60%;
-        background-color: darkgray;
+        background-color: #E6F0FF;
         padding: 15px;
         border-radius: 30px;
         margin: 20px;
@@ -64,7 +66,7 @@
 .user-text {
     display: flex;
     justify-items: center;
-    justify-content: start;
+    justify-content: end;
 
     .text {
         width: 60%;
@@ -83,19 +85,129 @@
         height: 30px;
         margin-bottom: 30px;
         cursor: pointer;
+        border-radius: 5px;
+        border-color: #3485FE
     }
 }
 
+.img-template {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+}
+
+.img-modal {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 600px;
+    height: 819.21px;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(1)}
+    to {-webkit-transform:scale(2)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0.4)}
+    to {transform:scale(1)}
+}
+
+@-webkit-keyframes zoom-out {
+    from {transform:scale(1)}
+    to {transform:scale(0)}
+}
+@keyframes zoom-out {
+    from {transform:scale(1)}
+    to {transform:scale(0)}
+}
+.modal-content, #caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+.out {
+    animation-name: zoom-out;
+    animation-duration: 0.6s;
+}
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+
+.img-container{
+    margin-top: 30px;
+}
+
+
+
+.img-template:hover {opacity: 0.7;}
+
+
 .bot-text {
-    overflow: hidden;
-    animation: animate 2s linear forwards;
+    .text {
+        overflow: hidden;
+        animation: animate 5s;
+    }
 }
 
 @keyframes animate {
     0% {
-        width: 20%;
+        background-color: #FFFFFF;
+        color: #FFFFFF;
     }
     100% {
-        width: 100%;
+        background-color: #E6F0FF;
+        color: black;
+    }
+}
+
+.speakers-button {
+        overflow: hidden;
+        animation: animate 7s;
+}
+
+@keyframes animate {
+    0% {
+        background-color: #FFFFFF;
+        color: #FFFFFF;
+        border: #FFFFFF;
+    }
+    100% {
+        background-color: #E6F0FF;
+        color: black;
+        border-color: #3485FE
     }
 }

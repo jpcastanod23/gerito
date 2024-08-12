@@ -12,6 +12,7 @@
 </head>
 <body class=home-page>
 <div class="section-enter">
+    <h1>Welcome to the Digital invite maker</h1>
     <button onclick="location.href='/botAssistant'" class="button-enter"><span>Go to the assistant</span></button>
 </div>
 </body>

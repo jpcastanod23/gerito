@@ -1,20 +1,36 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ attribute name="speakers" required="true" type="java.lang.String" %>
+<%@ attribute name="userName" required="false" type="java.lang.String" %>
 
 <article>
     <h1>
-        Choose your template ${speakers}
+        ${userName},  Choose your template for ${speakers}
+            <c:choose>
+                <c:when test="${speakers>1}">
+                    speakers
+                </c:when>
+                <c:otherwise>
+                    speaker
+                </c:otherwise>
+            </c:choose>
     </h1>
     <section>
 
         <div class="grid">
-            <div class="grid-item"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/76301/01.png">
-                <button onclick="location.href='/selectTemplate?img=1&' +  'speakers=' + ${speakers}" class="select-image">Select</button>
+            <div class="grid-item"><img src="../images/fully-templates/template${speakers}-1.png">
+                <button onclick="location.href='/selectTemplate?speakers=' + ${speakers} + '&img=1'"
+                        class="select-image">Select
+                </button>
             </div>
-            <div class="grid-item"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/76301/04.png">
-                <button onclick="location.href='/selectTemplate?img=1&' +  'speakers=' + ${speakers}" class="select-image">Select</button>
+            <div class="grid-item"><img src="../images/fully-templates/template${speakers}-2.png">
+                <button onclick="location.href='/selectTemplate?speakers=' + ${speakers} + '&img=2'"
+                        class="select-image">Select
+                </button>
             </div>
-            <div class="grid-item"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/76301/06.png">
-                <button onclick="location.href='/selectTemplate?img=1&' +  'speakers=' + ${speakers}" class="select-image">Select</button>
+            <div class="grid-item"><img src="../images/fully-templates/template${speakers}-3.png">
+                <button onclick="location.href='/selectTemplate?speakers=' + ${speakers} + '&img=3'"
+                        class="select-image">Select
+                </button>
             </div>
         </div>
     </section>
