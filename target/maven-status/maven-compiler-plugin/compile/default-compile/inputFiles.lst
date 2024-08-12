@@ -4,9 +4,13 @@
 /Users/juan.castano/Documents/projects/gerito/src/main/java/com/gerito/Controllers/HomePageController.java
 /Users/juan.castano/Documents/projects/gerito/src/main/java/com/gerito/Controllers/SelectTemplateController.java
 /Users/juan.castano/Documents/projects/gerito/src/main/java/com/gerito/GeritoApplication.java
+/Users/juan.castano/Documents/projects/gerito/src/main/java/com/gerito/Models/ComponentModel.java
 /Users/juan.castano/Documents/projects/gerito/src/main/java/com/gerito/Models/SpeakerModel.java
+/Users/juan.castano/Documents/projects/gerito/src/main/java/com/gerito/Models/TemplateInformationModel.java
 /Users/juan.castano/Documents/projects/gerito/src/main/java/com/gerito/Models/TemplateModel.java
 /Users/juan.castano/Documents/projects/gerito/src/main/java/com/gerito/Services/CookieService.java
+/Users/juan.castano/Documents/projects/gerito/src/main/java/com/gerito/Services/ImageService.java
 /Users/juan.castano/Documents/projects/gerito/src/main/java/com/gerito/Services/TemplateService.java
 /Users/juan.castano/Documents/projects/gerito/src/main/java/com/gerito/Services/impl/DefaultCookieService.java
+/Users/juan.castano/Documents/projects/gerito/src/main/java/com/gerito/Services/impl/DefaultImageService.java
 /Users/juan.castano/Documents/projects/gerito/src/main/java/com/gerito/Services/impl/DefaultTemplateService.java

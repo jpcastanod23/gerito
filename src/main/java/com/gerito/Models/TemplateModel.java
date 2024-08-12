@@ -10,8 +10,8 @@ public class TemplateModel {
     private String title;
     private String description;
     private String place;
-    private Time time;
-    private Date date;
+    private String time;
+    private String date;
     private List<SpeakerModel> speakers;
 
     public String getTitle() {
@@ -38,19 +38,19 @@ public class TemplateModel {
         this.place = place;
     }
 
-    public Time getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(Time time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
