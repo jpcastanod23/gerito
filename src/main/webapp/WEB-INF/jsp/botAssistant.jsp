@@ -50,7 +50,8 @@
                 </div>
                 <div class="speakers-container img-container">
                     <button onclick="location.href='/fillTemplate?speakers=' + ${speakers} + '&img=${img}'"
-                            class="speakers-button">Next</button>
+                            class="speakers-button">Next
+                    </button>
 
                 </div>
             </div>

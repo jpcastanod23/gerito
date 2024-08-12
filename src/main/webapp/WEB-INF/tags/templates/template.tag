@@ -4,15 +4,15 @@
 
 <article>
     <h1>
-        ${userName},  Choose your template for ${speakers}
-            <c:choose>
-                <c:when test="${speakers>1}">
-                    speakers
-                </c:when>
-                <c:otherwise>
-                    speaker
-                </c:otherwise>
-            </c:choose>
+        ${userName}, Choose your template for ${speakers}
+        <c:choose>
+            <c:when test="${speakers>1}">
+                speakers
+            </c:when>
+            <c:otherwise>
+                speaker
+            </c:otherwise>
+        </c:choose>
     </h1>
     <section>
 

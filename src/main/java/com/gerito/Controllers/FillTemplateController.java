@@ -1,7 +1,6 @@
 package com.gerito.Controllers;
 
 import com.gerito.Models.TemplateModel;
-import com.gerito.Services.CookieService;
 import com.gerito.Services.TemplateService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;

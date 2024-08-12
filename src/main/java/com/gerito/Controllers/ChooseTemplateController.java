@@ -14,7 +14,7 @@ public class ChooseTemplateController {
                                  Model model, HttpServletResponse response) {
         model.addAttribute("speakers", speakers);
         model.addAttribute("userName", name);
-        Cookie userName = new Cookie("userName", name);//creating cookie object
+        Cookie userName = new Cookie("userName", name);
         response.addCookie(userName);
         return "chooseTemplate";
     }
