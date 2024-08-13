@@ -9,13 +9,13 @@
 <!DOCTYPE html>
 <html class="fill-page">
 <head>
-    <meta charset="ISO-8859-1">
+    <meta charset="UTF-8">
     <title>Create invitation</title>
 </head>
 <body>
 <div class="form">
     <h2>Create Invitation</h2>
-    <form:form cssClass="form-template" action="createTemplate?img=${img}&spkrs=${speakers}" method="post"
+    <form:form cssClass="form-template" action="createTemplate?img=${img}&spkrs=${speakers}" method="post" enctype="multipart/form-data"
                modelAttribute="template">
         <form:label path="title">Title:</form:label>
         <form:input path="title"/><br/>
@@ -39,16 +39,22 @@
         <form:label path="time">Time:</form:label>
         <form:input path="time"/><br/>
 
+
         <c:forEach items="${template.speakers}" var="speaker" varStatus="counter">
             <h2>${counter.index + 1}° Speaker's info</h2>
             <form:label path="speakers[${counter.index}].name">Name:</form:label>
             <form:input path="speakers[${counter.index}].name"/><br/>
             <form:label path="speakers[${counter.index}].role">Role:</form:label>
             <form:input path="speakers[${counter.index}].role"/><br/>
+            <label for="speakers[${counter.index}]">Image:</label>
+            <input type="file" id="speakers[${counter.index}].file" name="speakers[${counter.index}].file" accept="image/jpeg, image/png">
+
 
         </c:forEach>
 
-        <form:button>Create template</form:button>
+        <div class="button-container">
+        <form:button id="button-template">Create template</form:button>
+        </div>
     </form:form>
 </div>
 </body>
