@@ -27,7 +27,7 @@ label {
     background-image: url("../images/styles/form.png");
 }
 
-button {
+#button-template {
     margin: 10px 50px;
     cursor: pointer;
     border-radius: 5px;

@@ -81,11 +81,11 @@ public class DefaultTemplateService implements TemplateService {
 
 
     private void setComponentsTemplate1(TemplateInformationModel templateInformationModel) {
-        ComponentModel title = createComponent("title", 84, 283, 76,
+        ComponentModel title = createComponent("title", 84, 283, 96,
                 new Color(181, 51, 253), "Arial", 15 );
-        ComponentModel description = createComponent("description", 84, 408, 84,
+        ComponentModel description = createComponent("description", 84, 408, 104,
                 new Color(3, 83, 202), "Arial", 14 );
-        ComponentModel date = createComponent("date", 240, 3075, 53,
+        ComponentModel date = createComponent("date", 240, 3075, 60,
                 new Color(255, 255, 255), "Arial", 23 );
         ComponentModel time = createComponent("time", 878, 3075, 60,
                 new Color(255, 255, 255), "Arial", 23 );
@@ -95,8 +95,11 @@ public class DefaultTemplateService implements TemplateService {
                 new Color(0, 236, 253), "Arial", 25 );
         ComponentModel role = createComponent("role", 1305, 2345, 60,
                 new Color(255, 255, 255), "Arial", 23 );
+        ComponentModel file = createComponent("file", 331, 1587, 60,
+                new Color(255, 255, 255), "Arial", 23 );
 
         addComponents(templateInformationModel, title, description, date, time, place, name, role);
+        templateInformationModel.getComponents().add(file);
     }
 
     private void setComponentsTemplate2(TemplateInformationModel templateInformationModel) {

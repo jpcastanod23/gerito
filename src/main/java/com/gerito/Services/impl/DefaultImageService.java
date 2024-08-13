@@ -5,9 +5,11 @@ import com.gerito.Models.TemplateInformationModel;
 import com.gerito.Models.TemplateModel;
 import com.gerito.Services.ImageService;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.geom.Ellipse2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -39,6 +41,8 @@ public class DefaultImageService implements ImageService {
 
         setTextInComponent(getAccurrateComponent(templateInformationModel, "role"), templateModel.getSpeakers().get(0).getRole(), false, image);
 
+        setImagInComponent(getAccurrateComponent(templateInformationModel, "file"), templateModel.getSpeakers().get(0).getFile(), image);
+
         if (templateModel.getSpeakers().size() > 1) {
             setTextInComponent(getAccurrateComponent(templateInformationModel, "name2"), templateModel.getSpeakers().get(1).getName(), false,  image);
             setTextInComponent(getAccurrateComponent(templateInformationModel, "role2"), templateModel.getSpeakers().get(1).getRole(), false,  image);
@@ -50,7 +54,7 @@ public class DefaultImageService implements ImageService {
 
 
         ImageIO.write(image, "png", new File("src/main/resources/static/images/output/" +
-                "invitation-" + speakers + "-" + img + new Date() + ".png"));
+                "invitation-" + speakers + "-" + img + ".png"));
     }
 
 
@@ -67,9 +71,10 @@ public class DefaultImageService implements ImageService {
         if (componentModel != null) {
             Graphics g = image.getGraphics();
             g.setColor(componentModel.getFontColor());
-            g.setFont(new Font(componentModel.getFontFamily(), Font.BOLD, componentModel.getFontSize()));
+            g.setFont(new Font("Roboto", Font.BOLD, componentModel.getFontSize()));
+
             if(isDesc){
-                g.setFont(new Font(componentModel.getFontFamily(), Font.PLAIN, componentModel.getFontSize()));
+                g.setFont(new Font(componentModel.getFontFamily(), Font.BOLD, componentModel.getFontSize()));
 
             }
 
@@ -84,6 +89,35 @@ public class DefaultImageService implements ImageService {
 
             g.dispose();
         }
+    }
+
+    private void setImagInComponent(ComponentModel componentModel, MultipartFile file, BufferedImage image) throws IOException {
+        if (componentModel != null) {
+            Graphics g = image.getGraphics();
+            Image speakerImage = ImageIO.read(file.getInputStream());
+
+            Image resultingImage = speakerImage.getScaledInstance(835, 905, Image.SCALE_DEFAULT);
+            BufferedImage finalImage =  cropImageIntoCircle(resultingImage);
+
+            g.drawImage(finalImage, componentModel.getX(), componentModel.getY(), null);
+            g.dispose();
+        }
+    }
+
+    public BufferedImage cropImageIntoCircle(Image img) {
+        int width = img.getWidth(null);
+        int height = img.getHeight(null);
+
+        BufferedImage bi = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g2 = bi.createGraphics();
+
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+                RenderingHints.VALUE_ANTIALIAS_ON);
+        int circleDiameter = Math.min(width,height);
+        Ellipse2D.Double circle = new Ellipse2D.Double(0,0,circleDiameter,circleDiameter);
+        g2.setClip(circle);
+        g2.drawImage(img,0,0,null);
+        return bi;
     }
 
     private List<String> getLines(String text, int lineCount) {
