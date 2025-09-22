@@ -1,4 +1,4 @@
-.home-page {
+.home-page, .check-page {
     background-size: 100vw 100vh;
     background-image: url("../images/styles/home.png");
     overflow-y: hidden;
