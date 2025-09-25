@@ -5,3 +5,15 @@ pr_compliances:
     objective: "All methos should have maximum 10 lines"
     success_criteria: "The method have maximum 10 lines of code"
     failure_criteria: "There is amethod wit more than 10 lines of code"
+
+  - title: "use logs"
+    compliance_label: true
+    objective: "We should not user system.out.println, we should use a logger"
+    success_criteria: "Methos should user loggers"
+    failure_criteria: "Methods should not use system.out.println"
+
+  - title: "use facades"
+    compliance_label: true
+    objective: "Controllers should not call services directly, they should use a facade"
+    success_criteria: "Controllers calls facade first and then facade call services"
+    failure_criteria: "Controllers calls directly services"
