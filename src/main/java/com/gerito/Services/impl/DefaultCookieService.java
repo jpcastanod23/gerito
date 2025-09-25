@@ -15,6 +15,16 @@ public class DefaultCookieService implements CookieService {
 
     @Override
     public String getCookieName(HttpServletRequest request) {
+        System.out.println("testing");
+        System.out.println("testing");
+        System.out.println("testing");
+        System.out.println("testing");
+        System.out.println("testing");
+        System.out.println("testing");
+        System.out.println("testing");
+        System.out.println("testing");
+        System.out.println("testing");
+        System.out.println("testing");
         Optional<Cookie> cookieOpt = Arrays.stream(request.getCookies())
                 .filter(cookie -> cookie.getName().equals("userName")).findFirst();
         return cookieOpt.isPresent() ? cookieOpt.get().getValue() : "";
