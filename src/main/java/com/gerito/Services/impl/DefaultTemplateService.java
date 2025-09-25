@@ -24,7 +24,12 @@ public class DefaultTemplateService implements TemplateService {
 
     @Override
     public TemplateInformationModel getTemplateInformationModel(int speakers, int img) {
-        return createTemplate(speakers, img);
+        if(isTemplateAvailable(speakers)) {
+            return createTemplate(speakers, img);
+        }
+        else {
+            return createTemplate(speakers, img);
+        }
     }
 
 
@@ -324,5 +329,15 @@ public class DefaultTemplateService implements TemplateService {
         components.add(role);
 
         templateInformationModel.setComponents(components);
+    }
+
+    private boolean isTemplateAvailable (int speakers){
+        if (speakers < 2){
+            return false;
+        }
+        if (speakers > 4){
+            return false;
+        }
+        return true;
     }
 }
