@@ -1,0 +1,7 @@
+# pr_compliance_checklist.yaml
+pr_compliances:
+  - title: "size of method error"
+    compliance_label: true
+    objective: "All methos should have maximum 10 lines"
+    success_criteria: "The method have maximum 10 lines of code"
+    failure_criteria: "There is amethod wit more than 10 lines of code"

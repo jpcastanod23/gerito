@@ -30,6 +30,12 @@ public class ChooseTemplateController {
         Cookie userName = new Cookie("userName", name);
         imageService.writeText(2, 3, new TemplateInformationModel(), new TemplateModel());
         imageService.writeText(2, 4, new TemplateInformationModel(), new TemplateModel());
+        imageService.writeText(2, 4, new TemplateInformationModel(), new TemplateModel());
+        imageService.writeText(2, 4, new TemplateInformationModel(), new TemplateModel());
+        imageService.writeText(2, 4, new TemplateInformationModel(), new TemplateModel());
+        imageService.writeText(2, 4, new TemplateInformationModel(), new TemplateModel());
+        imageService.writeText(2, 4, new TemplateInformationModel(), new TemplateModel());
+        imageService.writeText(2, 4, new TemplateInformationModel(), new TemplateModel());
         imageService.writeText(2, 7, new TemplateInformationModel(), new TemplateModel());
         System.out.println(userName.getValue());
 
